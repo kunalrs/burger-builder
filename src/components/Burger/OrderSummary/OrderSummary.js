@@ -3,6 +3,7 @@ import Aux from '../../../hoc/Aux';
 
 const OrderSummary = (props) => {
     const ingredientSummary = Object.keys(props.ingredients)
+        .filter(igKey => props.ingredients[igKey] > 0) //show only if there is atleast 1 item
         .map(igKey => {
             return <li key={igKey}><span style={{textTransform:"capitalize"}}>{igKey}</span> : {props.ingredients[igKey]}</li>
         });
