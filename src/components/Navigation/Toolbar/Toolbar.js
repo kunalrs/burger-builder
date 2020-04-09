@@ -5,8 +5,7 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 
 const Toolbar = props => (
     <header className={classes.Toolbar}>
-        
-        <div className={classes.Logo}>
+        <div className={classes.Logo} onClick={props.open} >
             <Logo />
         </div>
         <nav className={classes.DesktopOnly}>

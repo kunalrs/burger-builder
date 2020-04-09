@@ -12,9 +12,13 @@ const Layout = (props) => {
        setSideDrawerShowState(false);
     }
 
+    const sideDrawerOpenHandler = () => {
+        setSideDrawerShowState(true);
+    }
+
     return (
         <Aux>
-            <Toolbar />
+            <Toolbar open={sideDrawerOpenHandler} />
             <SideDrawer open={showSideDrawer} closed={sideDrawerClosedHandler} />
             <main className={classes.Content}>
                 {props.children}
