@@ -6,19 +6,19 @@ import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
 
 const Layout = (props) => {
 
-    const [showSideDrawer, setSideDrawerShowState] = useState(true);
+    const [showSideDrawer, setSideDrawerShowState] = useState(false);
 
     const sideDrawerClosedHandler = () => {
        setSideDrawerShowState(false);
     }
 
-    const sideDrawerOpenHandler = () => {
-        setSideDrawerShowState(true);
+    const sideDrawerToggleHandler = () => {
+        setSideDrawerShowState(!showSideDrawer);
     }
 
     return (
         <Aux>
-            <Toolbar open={sideDrawerOpenHandler} />
+            <Toolbar open={sideDrawerToggleHandler} />
             <SideDrawer open={showSideDrawer} closed={sideDrawerClosedHandler} />
             <main className={classes.Content}>
                 {props.children}
